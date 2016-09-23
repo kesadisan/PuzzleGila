@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bfcd6ebbf65bea2449ce1598de5fed4b
+guid: 5413bab15c3dd4a4085a9fe254a17e96
 timeCreated: 1462995562
 licenseType: Free
 ModelImporter:
@@ -65,7 +65,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: LoPoly_Hand_Mesh_Left
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 1
     materialSearch: 1
   animations:

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle Match.CSharp", "Puzzle Match.CSharp.csproj", "{69AA7FC9-1558-B6A8-B2BA-928BA03DA498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle Match.CSharp.Editor", "Puzzle Match.CSharp.Editor.csproj", "{633E1C9B-097F-DAB1-42AF-EAE7F33E33E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69AA7FC9-1558-B6A8-B2BA-928BA03DA498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AA7FC9-1558-B6A8-B2BA-928BA03DA498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69AA7FC9-1558-B6A8-B2BA-928BA03DA498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AA7FC9-1558-B6A8-B2BA-928BA03DA498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633E1C9B-097F-DAB1-42AF-EAE7F33E33E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633E1C9B-097F-DAB1-42AF-EAE7F33E33E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633E1C9B-097F-DAB1-42AF-EAE7F33E33E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633E1C9B-097F-DAB1-42AF-EAE7F33E33E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
