@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ae78a5f2de427a34fb4f7aa3f635c73d
+timeCreated: 1465247011
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mainBGM: {fileID: 24500003, guid: e3a152376dcedd440b8056c465cec213, type: 2}
+  - finishBGM: {fileID: 24541632, guid: e3a152376dcedd440b8056c465cec213, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
