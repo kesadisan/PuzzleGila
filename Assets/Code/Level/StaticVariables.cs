@@ -8,6 +8,7 @@ public static class StaticVariables{
     public static GameObject rightObject;
 
     public static GameObject chosenObject;
+    public static GameObject lastChosenObject;
 
     //1 = left
     //2 = right

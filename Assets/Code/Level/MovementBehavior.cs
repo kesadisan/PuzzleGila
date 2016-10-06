@@ -25,6 +25,7 @@ public class MovementBehavior : MonoBehaviour {
     void LateUpdate() {
         if(isTouchingLeft == true || isTouchingRight == true) {
             pinchScript.enabled = true;
+            
         }
         else if (isTouchingLeft == false && isTouchingRight == true) {
             pinchScript.enabled = true;
@@ -38,7 +39,8 @@ public class MovementBehavior : MonoBehaviour {
             pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
             pinchScript.PinchDetectorB = null;
         }
-        else if(isTouchingLeft == false && isTouchingRight == false) { 
+        else if(isTouchingLeft == false && isTouchingRight == false) {
+
             pinchScript.enabled = false;
             touchingHand = 0;
             pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
