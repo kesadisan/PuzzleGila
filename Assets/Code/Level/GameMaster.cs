@@ -85,7 +85,7 @@ public class GameMaster : MonoBehaviour{
             }
 
             StaticVariables.lastChosenObject.GetComponent<Rigidbody>().useGravity = false;
-            StaticVariables.lastChosenObject.GetComponent<Rigidbody>().isKinematic = true;
+            StaticVariables.lastChosenObject.GetComponent<Rigidbody>().isKinematic = true;  
         }
     }
 
