@@ -7,15 +7,16 @@ public class CameraMovement : MonoBehaviour {
 
     public GameObject cameraLookAt;
 
-    public float zLowerLimit = -1.0f;
-    public float zHigherLimit = 0.0f;
+    public float zLowerLimit = 10.0f;
+    public float zHigherLimit = -10.0f;
+
+    public float zCounter = 0.0f;
 
     public float orbitSpeed = 20.0f;
 
 	// Use this for initialization
 	void Start () {
         cameraLookAtPosition();
-
     }
 	
 	// Update is called once per frame
@@ -40,8 +41,9 @@ public class CameraMovement : MonoBehaviour {
 
     void zoomIn()
     {
-        if (targetObject.transform.localPosition.z < zHigherLimit)
+        if (zCounter < zLowerLimit)
         {
+            zCounter += 0.1f;
             targetObject.transform.Translate(new Vector3(0.0f, 0.0f, 0.1f));
 
             //targetObject.transform.position = targetCamera.transform.position;
@@ -50,8 +52,9 @@ public class CameraMovement : MonoBehaviour {
 
     void zoomOut()
     {
-        if (targetObject.transform.localPosition.z > zLowerLimit)
+        if (zCounter > zHigherLimit)
         {
+            zCounter -= 0.1f;
             targetObject.transform.Translate(new Vector3(0.0f, 0.0f, -0.1f));
 
             //targetObject.transform.position = targetCamera.transform.position;
@@ -65,21 +68,27 @@ public class CameraMovement : MonoBehaviour {
 
     void rotateLeft()
     {
+        float targetObjectOriginalZ = targetObject.transform.localPosition.z;
 
         Vector3 targetPos = new Vector3(cameraLookAt.transform.position.x,
                                         cameraLookAt.transform.position.y,
                                         cameraLookAt.transform.position.z);
 
         targetObject.transform.RotateAround(targetPos, Vector3.up, orbitSpeed * Time.deltaTime);
+        
     }
 
     void rotateRight()
     {
+
+        float targetObjectOriginalZ = targetObject.transform.localPosition.z;
 
         Vector3 targetPos = new Vector3(cameraLookAt.transform.position.x,
                                         cameraLookAt.transform.position.y,
                                         cameraLookAt.transform.position.z);
 
         targetObject.transform.RotateAround(targetPos, Vector3.up, -orbitSpeed * Time.deltaTime);
+
+        
     }
 }
