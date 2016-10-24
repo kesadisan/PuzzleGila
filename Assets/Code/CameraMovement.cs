@@ -13,27 +13,29 @@ public class CameraMovement : MonoBehaviour {
     public float zCounter = 0.0f;
 
     public float orbitSpeed = 20.0f;
+    
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         cameraLookAtPosition();
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetAxis("Vertical") >= 0.5)
         {
             zoomIn();
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetAxis("Vertical") <= -0.5)
         {
             zoomOut();
         }
-        else if (Input.GetKey(KeyCode.Q))
+        else if (Input.GetAxis("Horizontal") <= -0.5)
         {
             rotateLeft();
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetAxis("Horizontal") >= 0.5)
         {
             rotateRight();
         }

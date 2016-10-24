@@ -6,8 +6,8 @@ public class CheckWinCondition : MonoBehaviour {
 
     public int howManyShape;
     public Animator winBox;
-    public ThumbsUpEnabler thumbsUpLeft;
-    public ThumbsUpEnabler thumbsUpRight;
+    //public ThumbsUpEnabler thumbsUpLeft;
+    //public ThumbsUpEnabler thumbsUpRight;
     public GameMusicController gameMusic;
     private int currentScore;
 
@@ -33,8 +33,8 @@ public class CheckWinCondition : MonoBehaviour {
         if (howManyShape == currentScore)
         {
             winBox.SetBool("WinTheGame", true);
-            thumbsUpLeft.enableScript();
-            thumbsUpRight.enableScript();
+            //thumbsUpLeft.enableScript();
+            //thumbsUpRight.enableScript();
             gameMusic.winBGMStart();
         }
     }
