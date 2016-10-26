@@ -28,6 +28,8 @@ public class ShapeMatcher : MonoBehaviour {
         }
     }
 
+    private float offset = 20.0f;
+
     void checkRotation(GameObject target) {
 
         float targetX = target.transform.eulerAngles.x;
@@ -51,23 +53,23 @@ public class ShapeMatcher : MonoBehaviour {
             float minZ = this.transform.eulerAngles.z - 10f;
             */
 
-            float maxX = xyz.x + 10f;
-            float minX = xyz.x - 10f;
+            float maxX = xyz.x + offset;
+            float minX = xyz.x - offset;
 
-            float maxY = xyz.y + 10f;
-            float minY = xyz.y - 10f;
+            float maxY = xyz.y + offset;
+            float minY = xyz.y - offset;
 
-            float maxZ = xyz.z + 10f;
-            float minZ = xyz.z - 10f;
+            float maxZ = xyz.z + offset;
+            float minZ = xyz.z - offset;
 
-            if (targetX + 10.0f > 360) maxX += 360;
-            if (targetX - 10.0f < 0) minX -= 360;
+            if (targetX + offset > 360) maxX += 360;
+            if (targetX - offset < 0) minX -= 360;
 
-            if (targetY + 10.0f > 360) maxY += 360;
-            if (targetY - 10.0f < 0) minY -= 360;
+            if (targetY + offset > 360) maxY += 360;
+            if (targetY - offset < 0) minY -= 360;
 
-            if (targetZ + 10.0f > 360) maxZ += 360;
-            if (targetZ - 10.0f < 0) minZ -= 360;
+            if (targetZ + offset > 360) maxZ += 360;
+            if (targetZ - offset < 0) minZ -= 360;
 
             if (targetX < maxX && targetX > minX &&
                 targetY < maxY && targetY > minY &&
@@ -79,6 +81,8 @@ public class ShapeMatcher : MonoBehaviour {
 
             Debug.Log("IniCheck");
             _CheckWin.addScore();
+            GameObject.Find("MusicPlayer").GetComponent<GameMusicController>().playSFX();
+            GameObject.Find("GameMaster").GetComponent<GameMaster>().playFlash();
             target.transform.parent.GetComponent<BoxCollider>().enabled = false;
             target.GetComponent<SphereCollider>().enabled = false;
             this.transform.parent.gameObject.SetActive(false);

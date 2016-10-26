@@ -25,6 +25,11 @@ public class GameMaster : MonoBehaviour{
         */
     }
     
+    public void playFlash()
+    {
+        GameObject.Find("Flash").GetComponent<Animator>().Play("FlashIdle", -1, 0.0f);
+    }
+
     public void setIsMoving() {
         StaticVariables.isMovingObject = true;
     }

@@ -12,6 +12,7 @@ public class ObjectBehavior : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        /*
         if (Input.GetKey(KeyCode.UpArrow)) {
             transform.Rotate(new Vector3(-1f, 0, 0));
         }
@@ -31,6 +32,6 @@ public class ObjectBehavior : MonoBehaviour {
         if (Input.GetKey(KeyCode.D)) {
             transform.Rotate(new Vector3(0, -1f, 0));
         }
-
+        */
     }
 }
