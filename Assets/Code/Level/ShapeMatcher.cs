@@ -6,6 +6,7 @@ public class ShapeMatcher : MonoBehaviour {
 
     public int shapeID;
     public CheckWinCondition _CheckWin;
+    private float offset = 20.0f;
 
     public List<XYZSerializable> listTargetRotation = new List<XYZSerializable>();
 
@@ -28,7 +29,7 @@ public class ShapeMatcher : MonoBehaviour {
         }
     }
 
-    private float offset = 20.0f;
+    
 
     void checkRotation(GameObject target) {
 

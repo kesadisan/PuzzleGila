@@ -42,8 +42,8 @@ namespace Leap.Unity {
     [SerializeField]
     private RotationMethod _twoHandedRotationMethod;
 
-    [SerializeField]
-    private bool _allowScale = true;
+    //[SerializeField]
+    //private bool _allowScale = true;
 
     [Header("GUI Options")]
     [SerializeField]
@@ -103,7 +103,7 @@ namespace Leap.Unity {
         doRotationMethodGUI(ref _oneHandedRotationMethod);
         GUILayout.Label("Two Handed Settings");
         doRotationMethodGUI(ref _twoHandedRotationMethod);
-        _allowScale = GUILayout.Toggle(_allowScale, "Allow Two Handed Scale");
+        //_allowScale = GUILayout.Toggle(_allowScale, "Allow Two Handed Scale");
       }
     }
 
@@ -148,9 +148,9 @@ namespace Leap.Unity {
           break;
       }
 
-      if (_allowScale) {
+      /*if (_allowScale) {
         _anchor.localScale = Vector3.one * Vector3.Distance(_pinchDetectorA.Position, _pinchDetectorB.Position);
-      }
+      }*/
     }
 
     private void transformSingleAnchor(PinchDetector singlePinch) {
@@ -169,7 +169,7 @@ namespace Leap.Unity {
           break;
       }
 
-      _anchor.localScale = Vector3.one;
+      //_anchor.localScale = Vector3.one;
     }
   }
 }

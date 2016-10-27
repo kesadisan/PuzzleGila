@@ -70,7 +70,7 @@ public class CameraMovement : MonoBehaviour {
 
     void rotateLeft()
     {
-        float targetObjectOriginalZ = targetObject.transform.localPosition.z;
+       //float targetObjectOriginalZ = targetObject.transform.localPosition.z;
 
         Vector3 targetPos = new Vector3(cameraLookAt.transform.position.x,
                                         cameraLookAt.transform.position.y,
@@ -83,7 +83,7 @@ public class CameraMovement : MonoBehaviour {
     void rotateRight()
     {
 
-        float targetObjectOriginalZ = targetObject.transform.localPosition.z;
+        //float targetObjectOriginalZ = targetObject.transform.localPosition.z;
 
         Vector3 targetPos = new Vector3(cameraLookAt.transform.position.x,
                                         cameraLookAt.transform.position.y,
