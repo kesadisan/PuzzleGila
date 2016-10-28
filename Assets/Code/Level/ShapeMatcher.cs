@@ -34,11 +34,8 @@ public class ShapeMatcher : MonoBehaviour {
     void checkRotation(GameObject target) {
 
         float targetX = target.transform.eulerAngles.x;
-
         float targetY = target.transform.eulerAngles.y;
-
         float targetZ = target.transform.eulerAngles.z;
-
         bool flag = false;
 
         foreach (XYZSerializable xyz in listTargetRotation) {
