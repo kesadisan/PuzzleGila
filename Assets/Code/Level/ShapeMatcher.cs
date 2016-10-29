@@ -24,7 +24,14 @@ public class ShapeMatcher : MonoBehaviour {
         if (col.tag == "target") {
             if(col.GetComponent<ObjectBehavior>().ID == shapeID) {
                 checkRotation(col.gameObject);
-                Debug.Log("test");
+                //For level making
+                Debug.Log("Hit!");
+                Debug.Log("X:");
+                Debug.Log(col.gameObject.transform.eulerAngles.x);
+                Debug.Log("Y:");
+                Debug.Log(col.gameObject.transform.eulerAngles.y);
+                Debug.Log("Z:");
+                Debug.Log(col.gameObject.transform.eulerAngles.z);
             }
         }
     }
@@ -77,7 +84,7 @@ public class ShapeMatcher : MonoBehaviour {
         }
         if (flag) {
 
-            Debug.Log("IniCheck");
+            Debug.Log("Gotcha!");
             _CheckWin.addScore();
             GameObject.Find("MusicPlayer").GetComponent<GameMusicController>().playSFX();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().playFlash();
