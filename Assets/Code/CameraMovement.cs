@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cameraLookAtPosition();
-        
+        Debug.Log(cameraLookAt.transform.localRotation);
     }
 	
 	// Update is called once per frame
@@ -92,5 +92,18 @@ public class CameraMovement : MonoBehaviour {
         targetObject.transform.RotateAround(targetPos, Vector3.up, -orbitSpeed * Time.deltaTime);
 
         
+    }
+
+    public void winCameraMovement()
+    {
+        /*
+        Vector3 targetRotation = new Vector3(0.0f,
+                                             cameraLookAt.transform.localRotation.y,
+                                             cameraLookAt.transform.localRotation.z);
+
+        targetObject.transform.localRotation = Quaternion.Euler(targetRotation);
+        */
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().playFlash();
+        targetObject.transform.rotation = Quaternion.Euler(0.0f, targetObject.transform.eulerAngles.y, 0);
     }
 }

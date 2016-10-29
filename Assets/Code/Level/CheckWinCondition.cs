@@ -36,6 +36,7 @@ public class CheckWinCondition : MonoBehaviour {
             //thumbsUpLeft.enableScript();
             //thumbsUpRight.enableScript();
             gameMusic.winBGMStart();
+            GameObject.Find("CameraController").GetComponent<CameraMovement>().winCameraMovement();
         }
     }
 
