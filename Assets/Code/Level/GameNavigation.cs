@@ -18,17 +18,27 @@ public class GameNavigation : MonoBehaviour {
     {
         if (Input.GetButton("Restart"))
         {
-            LoadLevelAnim.SetBool("startLoadingNext", true);
-            MusicPlayer.SetBool("isReloadLevel", true);
-            StartCoroutine(restartLevel(LoadLevelAnim));
+            restartGame();
         }
 
         if (Input.GetButton("Exit"))
         {
-            LoadLevelAnim.SetBool("startLoadingNext", true);
-            MusicPlayer.SetBool("isReloadLevel", true);
-            StartCoroutine(exitLevel(LoadLevelAnim));
+            exitGame();
         }
+    }
+
+    public void restartGame()
+    {
+        LoadLevelAnim.SetBool("startLoadingNext", true);
+        MusicPlayer.SetBool("isReloadLevel", true);
+        StartCoroutine(restartLevel(LoadLevelAnim));
+    }
+
+    public void exitGame()
+    {
+        LoadLevelAnim.SetBool("startLoadingNext", true);
+        MusicPlayer.SetBool("isReloadLevel", true);
+        StartCoroutine(exitLevel(LoadLevelAnim));
     }
 
     IEnumerator restartLevel(Animator source)

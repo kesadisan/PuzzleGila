@@ -6,15 +6,25 @@ public class MovementBehavior : MonoBehaviour {
     bool isTouchingLeft = false;
     bool isTouchingRight = false;
 
+    public bool movable = true;
+
     public Leap.Unity.LeapRTS pinchScript;
 
     //1 = left
     //2 = right
     public int touchingHand = 0;
 
+    public GameMaster gameMaster;
+
+    public void setUnmovable()
+    {
+        movable = false;
+        pinchScript.enabled = false;
+    }
+
 	// Use this for initialization
 	void Start () {
-	
+        gameMaster = GameObject.Find("GameMaster").GetComponent<GameMaster>();
 	}
 
     void FixedUpdate() {
@@ -23,28 +33,35 @@ public class MovementBehavior : MonoBehaviour {
     }
 
     void LateUpdate() {
-        if(isTouchingLeft == true || isTouchingRight == true) {
-            pinchScript.enabled = true;
-            
-        }
-        else if (isTouchingLeft == false && isTouchingRight == true) {
-            pinchScript.enabled = true;
-            touchingHand = 2;
-            pinchScript.PinchDetectorA = null;
-            pinchScript.PinchDetectorB = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorRight;
-        }
-        else if (isTouchingLeft == true && isTouchingRight == false) {
-            pinchScript.enabled = true;
-            touchingHand = 1;
-            pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
-            pinchScript.PinchDetectorB = null;
-        }
-        else if(isTouchingLeft == false && isTouchingRight == false) {
+        if (movable == true)
+        {
+            if (isTouchingLeft == true || isTouchingRight == true)
+            {
+                pinchScript.enabled = true;
 
-            pinchScript.enabled = false;
-            touchingHand = 0;
-            pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
-            pinchScript.PinchDetectorB = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorRight;
+            }
+            else if (isTouchingLeft == false && isTouchingRight == true)
+            {
+                pinchScript.enabled = true;
+                touchingHand = 2;
+                pinchScript.PinchDetectorA = null;
+                pinchScript.PinchDetectorB = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorRight;
+            }
+            else if (isTouchingLeft == true && isTouchingRight == false)
+            {
+                pinchScript.enabled = true;
+                touchingHand = 1;
+                pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
+                pinchScript.PinchDetectorB = null;
+            }
+            else if (isTouchingLeft == false && isTouchingRight == false)
+            {
+
+                pinchScript.enabled = false;
+                touchingHand = 0;
+                pinchScript.PinchDetectorA = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorLeft;
+                pinchScript.PinchDetectorB = (Leap.Unity.PinchDetector)GameObject.Find("GameMaster").GetComponent<GameMaster>().detectorRight;
+            }
         }
     }
 

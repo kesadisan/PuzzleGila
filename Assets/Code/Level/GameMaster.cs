@@ -5,6 +5,7 @@ public class GameMaster : MonoBehaviour{
 
     public Leap.Unity.Detector detectorLeft;
     public Leap.Unity.Detector detectorRight;
+    public bool gameEnd = false;
 
     void Update()
     {
@@ -28,6 +29,9 @@ public class GameMaster : MonoBehaviour{
     public void playFlash()
     {
         GameObject.Find("Flash").GetComponent<Animator>().Play("FlashIdle", -1, 0.0f);
+        gameEnd = true;
+        setFinishedMovingLeft();
+        setFinishedMovingRight();
     }
 
     public void setIsMoving() {

@@ -86,10 +86,14 @@ public class ShapeMatcher : MonoBehaviour {
 
             Debug.Log("Gotcha!");
             _CheckWin.addScore();
+            
+            target.transform.parent.GetComponent<BoxCollider>().enabled = false;
+            target.transform.parent.GetComponent<MovementBehavior>().setUnmovable();
+            target.GetComponent<SphereCollider>().enabled = false;
+
             GameObject.Find("MusicPlayer").GetComponent<GameMusicController>().playSFX();
             GameObject.Find("GameMaster").GetComponent<GameMaster>().playFlash();
-            target.transform.parent.GetComponent<BoxCollider>().enabled = false;
-            target.GetComponent<SphereCollider>().enabled = false;
+
             this.transform.parent.gameObject.SetActive(false);
             Destroy(this.transform.parent.gameObject);
         }

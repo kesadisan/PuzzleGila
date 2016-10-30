@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour {
 
     public int timeElapsed;
     public Text timeUIText;
+    public Text copyTimer;
 
     public Coroutine corTime;
     public bool isPlaying;
@@ -30,6 +31,7 @@ public class Timer : MonoBehaviour {
             yield return new WaitForSeconds(1.0f);
             timeElapsed++;
             timeUIText.text = timeElapsed.ToString();
+            copyTimer.text = timeElapsed.ToString();
         }
     }
 
@@ -37,6 +39,7 @@ public class Timer : MonoBehaviour {
     {
         isPlaying = false;
         StopCoroutine(corTime);
+        saveTime();
     }
 
     public void saveTime()
@@ -46,6 +49,7 @@ public class Timer : MonoBehaviour {
         if (scoreArray[stageNum] > timeElapsed)
         {
             scoreArray[stageNum] = timeElapsed;
+            Debug.Log("Saved!");
         }
 
         PlayerPrefsX.SetIntArray("highScore",scoreArray);
