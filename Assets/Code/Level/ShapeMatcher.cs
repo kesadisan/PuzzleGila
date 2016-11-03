@@ -6,7 +6,6 @@ public class ShapeMatcher : MonoBehaviour {
 
     public int shapeID;
     public CheckWinCondition _CheckWin;
-    private float offset = 40.0f;
 
     public List<XYZSerializable> listTargetRotation = new List<XYZSerializable>();
 
@@ -24,6 +23,7 @@ public class ShapeMatcher : MonoBehaviour {
         if (col.tag == "target") {
             if(col.GetComponent<ObjectBehavior>().ID == shapeID) {
                 checkRotation(col.gameObject);
+               
                 //For level making
                 Debug.Log("Hit!");
                 Debug.Log("X:");
@@ -36,8 +36,8 @@ public class ShapeMatcher : MonoBehaviour {
         }
     }
 
-    
 
+    private float offset = 40.0f;
     void checkRotation(GameObject target) {
 
         float targetX = target.transform.eulerAngles.x;
@@ -46,18 +46,6 @@ public class ShapeMatcher : MonoBehaviour {
         bool flag = false;
 
         foreach (XYZSerializable xyz in listTargetRotation) {
-
-            /*
-            float maxX = this.transform.eulerAngles.x + 10f;
-            float minX = this.transform.eulerAngles.x - 10f;
-
-            float maxY = this.transform.eulerAngles.y + 10f;
-            float minY = this.transform.eulerAngles.y - 10f;
-
-            float maxZ = this.transform.eulerAngles.z + 10f;
-            float minZ = this.transform.eulerAngles.z - 10f;
-            */
-
             float maxX = xyz.x + offset;
             float minX = xyz.x - offset;
 

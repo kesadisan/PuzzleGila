@@ -10,7 +10,6 @@ public class CheckWinCondition : MonoBehaviour {
     //public ThumbsUpEnabler thumbsUpRight;
     public GameMusicController gameMusic;
     private int currentScore;
-    public GameObject timerFunc;
 
     // Use this for initialization
     void Start () {
@@ -34,8 +33,6 @@ public class CheckWinCondition : MonoBehaviour {
         if (howManyShape == currentScore)
         {
             winBox.SetBool("WinTheGame", true);
-            //thumbsUpLeft.enableScript();
-            //thumbsUpRight.enableScript();
             gameMusic.winBGMStart();
             GameObject.Find("CameraController").GetComponent<CameraMovement>().winCameraMovement();
             GameObject.Find("Number").GetComponent<Timer>().stopTimer();
