@@ -22,26 +22,10 @@ public class videoPlayer : MonoBehaviour {
         
         movie.Play();
         movieAudio.Play();
-
-        StartCoroutine(FindEnd());
     }
 	
 	// Update is called once per frame
 	void Update () {
 
 	}
-
-    IEnumerator FindEnd()
-    {
-        while (movie.isPlaying)
-        {
-            yield return null;
-        }
-        Destroy(playerVideo);
-        animTitle.SetBool("Finished", true);
-        
-        yield break;
-    }
-
-
 }

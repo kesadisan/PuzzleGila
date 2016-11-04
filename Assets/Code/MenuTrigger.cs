@@ -21,6 +21,18 @@ public class MenuTrigger : MonoBehaviour {
         MenuScreen.SetBool("ToMenu-2", false);
     }
 
+    public void ToMenuTut()
+    {
+        MenuScreen.SetBool("ToMenuTut", true);
+        MenuScreen.SetBool("MenuTutToMenu-1", false);
+    }
+
+    public void MenuTutToMenu1()
+    {
+        MenuScreen.SetBool("MenuTutToMenu-1", true);
+        MenuScreen.SetBool("ToMenuTut", false);
+    }
+
     public void ToMenu2()
     {
         MenuScreen.SetBool("ToMenu-2", true);
@@ -50,5 +62,11 @@ public class MenuTrigger : MonoBehaviour {
     {
         MenuScreen.SetBool("ToTheme4", true);
         MenuScreen.SetBool("ToMenu-2", false);
+    }
+
+    public void ExitGameButton()
+    {
+        Debug.Log("Exit!");
+        Application.Quit();
     }
 }
