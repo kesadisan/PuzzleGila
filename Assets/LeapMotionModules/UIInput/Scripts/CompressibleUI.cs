@@ -73,7 +73,7 @@ namespace Leap.Unity.InputModule {
             Layers[i].Shadow.color = new Color(Layers[i].Shadow.color.r, Layers[i].Shadow.color.g, Layers[i].Shadow.color.b, 0f);
           }
         } else {
-          //Debug.LogWarning("Ensure that the layers that you have allotted have UI Elements in them!");
+          Debug.LogWarning("Ensure that the layers that you have allotted have UI Elements in them!");
         }
       }
       //if (!RetractWhenOutsideofTouchingDistance) {
