@@ -14,7 +14,8 @@ public class CheckWinCondition : MonoBehaviour {
     // Use this for initialization
     void Start () {
         currentScore = 0;
-	}
+        this.GetComponent<counterShow>().grabText(currentScore, howManyShape);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,6 +31,7 @@ public class CheckWinCondition : MonoBehaviour {
     void checkHowManyShape()
     {
         Debug.Log(currentScore);
+        this.GetComponent<counterShow>().grabText(currentScore, howManyShape);
         if (howManyShape == currentScore)
         {
             winBox.SetBool("WinTheGame", true);
