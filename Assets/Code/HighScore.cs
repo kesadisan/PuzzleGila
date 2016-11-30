@@ -20,6 +20,10 @@ public class HighScore : MonoBehaviour {
     public Text Level14;
     public Text Level15;
     public Text Level16;
+    public Text Level17;
+    public Text Level18;
+    public Text Level19;
+    public Text Level20;
 
     private int[] scoreArray;
 
@@ -42,6 +46,10 @@ public class HighScore : MonoBehaviour {
         Level14.text = getScoreByStageNum(13).ToString();
         Level15.text = getScoreByStageNum(14).ToString();
         Level16.text = getScoreByStageNum(15).ToString();
+        Level17.text = getScoreByStageNum(16).ToString();
+        Level18.text = getScoreByStageNum(17).ToString();
+        Level19.text = getScoreByStageNum(18).ToString();
+        Level20.text = getScoreByStageNum(19).ToString();
     }
 	
 	// Update is called once per frame
